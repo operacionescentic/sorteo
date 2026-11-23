@@ -49,7 +49,7 @@ function Ruleta() {
   const cargar = useCallback(async () => {
     const sb = supabase();
     const [ins, gan] = await Promise.all([
-      // Elegibles: abono validado e inscritos esta semana, o con un referido validado inscrito esta semana
+      // Elegibles: inscritos esta semana, o quienes tienen un referido con abono validado inscrito esta semana
       sb.rpc("sorteo_participantes", { p_fecha: fecha }),
       sb.from("sorteo_ganadores").select("inscripcion_id,premio,sorteo_inscripciones(nombre,documento)").eq("sorteo_fecha", fecha),
     ]);
@@ -138,7 +138,7 @@ function Ruleta() {
       <div className="toolbar">
         <div>
           <h1 style={{ margin: 0 }}>Ruleta del sorteo</h1>
-          <span className="muted">Participan inscritos de la semana con abono validado y quienes trajeron un referido con abono validado esta semana.</span>
+          <span className="muted">Participan todos los inscritos de la semana y quienes trajeron un referido con abono validado esta semana.</span>
         </div>
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
           <select value={fecha} onChange={(e) => setFecha(e.target.value)} disabled={girando} style={{ width: "auto" }}>

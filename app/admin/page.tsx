@@ -109,7 +109,7 @@ function Panel() {
       <div className="toolbar">
         <div>
           <h1 style={{ margin: 0 }}>Panel de inscripciones</h1>
-          <span className="muted">Valida abonos y filtra por comercial o fecha de inscripción.</span>
+          <span className="muted">Valida abonos de referidos y filtra por comercial o fecha de inscripción.</span>
         </div>
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
           <Link className="btn" href="/admin/ruleta">Ir a la ruleta</Link>

@@ -58,15 +58,11 @@ export default function Home() {
         <h2><span className="bar" />¿Cómo participar?</h2>
         <ul className="rules">
           <li>Llena el formulario con tus datos personales y el comercial que te atiende.</li>
-          <li>
-            <strong>Abono obligatorio:</strong> para participar debes abonar <strong>mínimo $200.000</strong> a tu paquete.
-            El área comercial valida los abonos manualmente; solo participan inscripciones con abono validado.
-          </li>
           <li>Cada número de documento se inscribe <strong>una sola vez</strong> y la inscripción es válida <strong>solo para el sorteo de la semana en curso</strong>.</li>
           <li>
             Para participar en la semana siguiente debes <strong>traer un referido</strong>: tu referido se inscribe
-            escribiendo <strong>tu número de documento</strong> y también debe abonar mínimo $200.000. Participas en la
-            semana en que tu referido se inscribe.
+            escribiendo <strong>tu número de documento</strong> y debe abonar <strong>mínimo $200.000</strong> a su paquete.
+            Participas en la semana en que tu referido se inscribe, una vez el área comercial valide su abono.
           </li>
           <li>Solo hay 2 ganadores por semana: uno obtiene 50% y otro 30% de descuento en el paquete que escoja.</li>
         </ul>

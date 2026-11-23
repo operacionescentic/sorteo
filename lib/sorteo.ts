@@ -43,7 +43,7 @@ const ERRORES: Record<string, string> = {
   NO_AUTORIZADO: "No tienes permisos de administrador.",
   AUN_NO_ES_HORA: "Aún no es hora: el sorteo se habilita el viernes a las 4:00 pm.",
   PREMIO_YA_SORTEADO: "Ese premio ya fue sorteado esta semana.",
-  SIN_PARTICIPANTES: "No hay participantes con abono validado disponibles para este sorteo.",
+  SIN_PARTICIPANTES: "No hay participantes disponibles para este sorteo.",
   FECHA_INVALIDA: "Fecha de sorteo inválida.",
 };
 

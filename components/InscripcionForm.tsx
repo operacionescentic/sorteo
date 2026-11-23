@@ -52,8 +52,8 @@ export default function InscripcionForm({ sorteoLabel }: Props) {
             escribir <strong>tu número de documento</strong> como referente y abonar <strong>al menos $200.000</strong>.
           </p>
           <p style={{ marginBottom: 0 }}>
-            Recuerda: el <strong>abono de $200.000 es obligatorio para todos</strong> los participantes. Tu comercial
-            validará tu abono para que quedes habilitado en el sorteo.
+            Tu referido participará con su inscripción y tú quedarás habilitado en su semana cuando el área comercial
+            valide su abono.
           </p>
         </div>
         <a className="btn ghost" style={{ marginTop: 20 }} href="/ganadores">

@@ -16,7 +16,7 @@ Migración: `supabase/migrations/20261117000000_sorteo.sql`
 
 - `sorteo_inscripciones`, `sorteo_ganadores`, `sorteo_admins` — RLS activo, anon no lee nada.
 - Inscripción pública vía RPC `sorteo_inscribir` (la semana se asigna en el servidor).
-- Sorteo vía RPC `sorteo_realizar` (solo admin, solo desde el viernes 16:00, elige ganador al azar en la BD entre abonos validados).
+- Sorteo vía RPC `sorteo_realizar` (solo admin, solo desde el viernes 16:00, elige ganador al azar en la BD entre inscritos de la semana y quienes trajeron un referido con abono validado).
 - Ganadores públicos vía RPC `sorteo_ganadores_publicos` (documento enmascarado).
 - Fechas de sorteo hardcodeadas en la migración y en `lib/sorteo.ts` (mantener sincronizadas).
 
