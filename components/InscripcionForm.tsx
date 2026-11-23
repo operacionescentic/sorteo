@@ -117,8 +117,7 @@ export default function InscripcionForm({ sorteoLabel }: Props) {
         <label className="check">
           <input type="checkbox" required />
           <span>
-            Entiendo que para participar debo abonar mínimo <strong>$200.000</strong>, que esta inscripción es válida solo
-            para el sorteo de esta semana y autorizo el tratamiento de mis datos personales para fines del sorteo.
+            Entiendo que esta inscripción es válida solo para el sorteo de esta semana y autorizo el tratamiento de mis datos personales para fines del sorteo.
           </span>
         </label>
       </div>
