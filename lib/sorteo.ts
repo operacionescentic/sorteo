@@ -3,7 +3,7 @@ export const FECHAS_SORTEO = ["2026-11-20", "2026-11-27", "2026-12-04", "2026-12
 
 export const COMERCIALES = [
   "Carolina Diaz",
-  "Sebastian Barbosa",
+  "Juan Sebastian Barbosa Forero",
   "Luna Torres",
   "Ximena Valencia",
   "Diego Barbosa",
