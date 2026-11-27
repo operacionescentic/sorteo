@@ -17,9 +17,10 @@ export function instanteSorteo(fecha: string): Date {
   return new Date(`${fecha}T16:00:00-05:00`);
 }
 
-/** Sorteo al que se asigna una inscripción hecha en `now`; null si ya terminaron. */
+/** Sorteo al que se asigna una inscripción hecha en `now` (el día del sorteo cuenta completo); null si ya terminaron. */
 export function sorteoActual(now = new Date()): string | null {
-  return FECHAS_SORTEO.find((f) => now < instanteSorteo(f)) ?? null;
+  const hoy = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Bogota" }).format(now);
+  return FECHAS_SORTEO.find((f) => hoy <= f) ?? null;
 }
 
 export function formatoFecha(fecha: string): string {
