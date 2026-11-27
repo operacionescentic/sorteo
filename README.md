@@ -6,6 +6,7 @@ Next.js 16 + React 19 + Supabase. Desplegado en Vercel.
 | Ruta | Descripción |
 |---|---|
 | `/` | Info del sorteo, ofertas y formulario de inscripción |
+| `/en-vivo` | Transmisión pública de la ruleta en tiempo real (Supabase Realtime) |
 | `/ganadores` | Ganadores públicos (se refresca cada 20 s) |
 | `/api/ganadores` | Endpoint público JSON (CORS abierto) |
 | `/admin` | Panel admin: validar abonos, filtros por comercial / fecha, exportar CSV |
@@ -17,6 +18,7 @@ Migración: `supabase/migrations/20261117000000_sorteo.sql`
 - `sorteo_inscripciones`, `sorteo_ganadores`, `sorteo_admins` — RLS activo, anon no lee nada.
 - Inscripción pública vía RPC `sorteo_inscribir` (la semana se asigna en el servidor).
 - Sorteo vía RPC `sorteo_realizar` (solo admin, solo desde el viernes 16:00, elige ganador al azar en la BD entre inscritos de la semana y quienes trajeron un referido con abono validado).
+- Cada giro guarda una fila en `sorteo_transmision` (lista de nombres, índice del ganador, desplazamiento); `/en-vivo` y `/admin/ruleta` animan ese mismo giro. Nombres públicos vía RPC `sorteo_participantes_publicos` (solo el día del sorteo).
 - Ganadores públicos vía RPC `sorteo_ganadores_publicos` (documento enmascarado).
 - Fechas de sorteo hardcodeadas en la migración y en `lib/sorteo.ts` (mantener sincronizadas).
 

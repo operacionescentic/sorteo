@@ -65,6 +65,10 @@ export default function Home() {
             Participas en la semana en que tu referido se inscribe, una vez el área comercial valide su abono.
           </li>
           <li>Solo hay 2 ganadores por semana: uno obtiene 50% y otro 30% de descuento en el paquete que escoja.</li>
+          <li>
+            Mira el sorteo <strong>en vivo</strong> cada viernes a las 4:00 pm en{" "}
+            <a href="/en-vivo"><strong>sorteo.centicsas.com.co/en-vivo</strong></a>.
+          </li>
         </ul>
       </section>
 

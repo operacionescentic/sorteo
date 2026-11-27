@@ -17,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </Link>
           <nav>
             <Link href="/">Inscripción</Link>
+            <Link href="/en-vivo">En vivo</Link>
             <Link href="/ganadores">Ganadores</Link>
           </nav>
         </header>

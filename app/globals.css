@@ -131,4 +131,6 @@ tr:hover td { background: #181818; }
 @media (max-width: 860px) { .ruleta-grid { grid-template-columns: 1fr; } }
 .winner-card { text-align: center; border: 2px solid var(--red-hi); background: linear-gradient(160deg, #3a0003, var(--panel)); animation: pop .5s ease; }
 .winner-card .name { font-size: 1.8rem; font-weight: 900; }
+.tag.live { animation: live 1.4s ease-in-out infinite; }
+@keyframes live { 50% { box-shadow: 0 0 0 6px rgba(227,18,27,.25); } }
 @keyframes pop { from { transform: scale(.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
