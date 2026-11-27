@@ -45,7 +45,8 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; }
 .grid { display: grid; gap: 20px; }
 .grid-2 { grid-template-columns: 1fr 1fr; }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
-@media (max-width: 860px) { .grid-2, .grid-4 { grid-template-columns: 1fr; } }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 860px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
 @media (min-width: 520px) and (max-width: 860px) { .grid-4 { grid-template-columns: 1fr 1fr; } }
 
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }

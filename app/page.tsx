@@ -24,7 +24,7 @@ export default function Home() {
         </h1>
         <p>
           Inscríbete para participar en el sorteo semanal que se realiza <strong>cada viernes a las 4:00 pm</strong>, del
-          20 de noviembre al 11 de diciembre. Cada semana hay <strong>2 ganadores</strong>.
+          27 de noviembre al 11 de diciembre. Cada semana hay <strong>2 ganadores</strong>.
         </p>
       </section>
 
@@ -41,8 +41,8 @@ export default function Home() {
 
       <section className="section card">
         <h2><span className="bar" />Fechas de los sorteos (4:00 pm)</h2>
-        <div className="grid grid-4">
-          {FECHAS_SORTEO.map((f) => {
+        <div className="grid grid-3">
+          {FECHAS_SORTEO.filter((f) => f !== "2026-11-20").map((f) => { // el sorteo del 20-nov no se realizó
             const past = now >= instanteSorteo(f);
             return (
               <div key={f} className={`date-chip ${f === actual ? "current" : ""} ${past ? "past" : ""}`}>
