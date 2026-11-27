@@ -131,8 +131,7 @@ function Ruleta() {
     await cargar();
   }
 
-  // TEMPORAL (prueba 27-nov): ruleta habilitada antes de las 4:00 pm. Restaurar: now >= instanteSorteo(fecha)
-  const habilitado = true;
+  const habilitado = now >= instanteSorteo(fecha);
   const faltan = instanteSorteo(fecha).getTime() - now.getTime();
   const gan50 = ganadores.find((g) => g.premio === 50);
   const gan30 = ganadores.find((g) => g.premio === 30);
