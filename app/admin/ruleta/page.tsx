@@ -80,13 +80,17 @@ function Ruleta() {
     else dibujar(rotRef.current, participantes);
   }, [participantes, congelada, dibujar]);
 
-  async function sortear(premio: 50 | 30) {
+  async function sortear(premio: 50 | 30, regirar = false) {
     if (girando) return;
+    if (regirar) {
+      const actual = premio === 50 ? gan50 : gan30;
+      if (!confirm(`¿Anular el premio del ${premio}% de ${actual?.nombre ?? "el ganador"} y volver a girar?\nEsta persona quedará fuera del sorteo de esta fecha.`)) return;
+    }
     setError(null);
     setUltimo(null);
     setCongelada(null);
     setGirando(true);
-    const { data, error } = await supabase().rpc("sorteo_realizar", { p_fecha: fecha, p_premio: premio });
+    const { data, error } = await supabase().rpc(regirar ? "sorteo_regirar" : "sorteo_realizar", { p_fecha: fecha, p_premio: premio });
     if (error || !data?.[0]) {
       setGirando(false);
       setError(mensajeError(error?.message));
@@ -188,7 +192,17 @@ function Ruleta() {
               <div className="card prize" key={p}>
                 <div className="pct">{p}%</div>
                 {g ? (
-                  <p><strong>{g.nombre}</strong><br /><span className="muted">Doc. {g.documento}</span></p>
+                  <>
+                    <p><strong>{g.nombre}</strong><br /><span className="muted">Doc. {g.documento}</span></p>
+                    <button
+                      className="btn ghost sm"
+                      disabled={girando}
+                      onClick={() => sortear(p, true)}
+                      title="El ganador no está conectado: anula su premio y vuelve a girar"
+                    >
+                      {girando ? "Girando…" : "↻ Re-girar (no conectado)"}
+                    </button>
+                  </>
                 ) : (
                   <button
                     className="btn block"

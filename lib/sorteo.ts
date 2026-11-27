@@ -46,6 +46,7 @@ const ERRORES: Record<string, string> = {
   PREMIO_YA_SORTEADO: "Ese premio ya fue sorteado esta semana.",
   SIN_PARTICIPANTES: "No hay participantes disponibles para este sorteo.",
   FECHA_INVALIDA: "Fecha de sorteo inválida.",
+  SIN_GANADOR: "Ese premio aún no tiene ganador.",
 };
 
 export function mensajeError(msg: string | undefined): string {

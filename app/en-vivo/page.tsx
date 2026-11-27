@@ -63,7 +63,8 @@ function EnVivo() {
   }, [participantes, congelada, girando, dibujar]);
 
   const revelar = useCallback((tx: Transmision) => {
-    setReveladas((prev) => (prev.some((r) => r.id === tx.id) ? prev : [...prev, tx]));
+    // Un re-giro reemplaza al ganador anterior del mismo premio
+    setReveladas((prev) => [...prev.filter((r) => r.premio !== tx.premio), tx]);
     setCongelada({ lista: tx.participantes, ganadorIdx: tx.ganador_idx });
     setUltimo(tx);
   }, []);
