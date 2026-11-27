@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { FECHAS_SORTEO, formatoFecha, instanteSorteo } from "@/lib/sorteo";
+import { FECHAS_SORTEO, formatoFecha, instanteSorteo, TEAMS_LINK } from "@/lib/sorteo";
 import { anguloFinal, animarGiro, dibujarRueda, TAU, type Segmento, type Transmision } from "@/lib/rueda";
 
 /** Fecha (YYYY-MM-DD) de hoy en Colombia. */
@@ -230,6 +230,12 @@ function EnVivo() {
               </div>
             );
           })}
+          <div className="card" style={{ textAlign: "center" }}>
+            <p style={{ marginTop: 0 }}>
+              <strong>¿Estás inscrito?</strong> Para que tu premio sea válido debes estar conectado a la reunión de Teams.
+            </p>
+            <a className="btn block" href={TEAMS_LINK} target="_blank" rel="noopener noreferrer">Unirme a Teams</a>
+          </div>
           <Link className="btn ghost" href="/ganadores">Ver todos los ganadores</Link>
         </div>
       </div>

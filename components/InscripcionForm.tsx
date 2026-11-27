@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { COMERCIALES, formatoFecha, mensajeError } from "@/lib/sorteo";
+import { COMERCIALES, formatoFecha, mensajeError , TEAMS_LINK } from "@/lib/sorteo";
 
 type Props = { sorteo: string; sorteoLabel: string };
 
@@ -51,11 +51,18 @@ export default function InscripcionForm({ sorteoLabel }: Props) {
             Si quieres participar en la siguiente semana debes <strong>traer a un referido</strong>: al inscribirse debe
             escribir <strong>tu número de documento</strong> como referente y abonar <strong>al menos $200.000</strong>.
           </p>
-          <p style={{ marginBottom: 0 }}>
+          <p>
             Tu referido participará con su inscripción y tú quedarás habilitado en su semana cuando el área comercial
             valide su abono.
           </p>
+          <p style={{ marginBottom: 0 }}>
+            <strong>Importante:</strong> para que tu premio sea válido debes estar <strong>conectado a la reunión de Teams</strong>{" "}
+            del sorteo el viernes a las 4:00 pm. Si no estás conectado, la ruleta vuelve a girar.
+          </p>
         </div>
+        <a className="btn" style={{ marginTop: 20 }} href={TEAMS_LINK} target="_blank" rel="noopener noreferrer">
+          Unirme a la reunión de Teams
+        </a>{" "}
         <a className="btn ghost" style={{ marginTop: 20 }} href="/ganadores">
           Ver ganadores
         </a>

@@ -12,6 +12,9 @@ export const COMERCIALES = [
 
 export const ABONO_MINIMO = 200000;
 
+/** Reunión de Teams del sorteo: el ganador debe estar conectado para que el premio sea válido. */
+export const TEAMS_LINK = "https://teams.microsoft.com/meet/2567635143001137?p=lXUiCk1u1DGNPGGQd8";
+
 /** Instante del sorteo: viernes 4:00 pm hora Colombia (UTC-5, sin horario de verano). */
 export function instanteSorteo(fecha: string): Date {
   return new Date(`${fecha}T16:00:00-05:00`);

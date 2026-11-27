@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FECHAS_SORTEO, formatoFecha, instanteSorteo, sorteoActual } from "@/lib/sorteo";
+import { FECHAS_SORTEO, formatoFecha, instanteSorteo, sorteoActual, TEAMS_LINK } from "@/lib/sorteo";
 import InscripcionForm from "@/components/InscripcionForm";
 
 export const dynamic = "force-dynamic";
@@ -58,7 +58,10 @@ export default function Home() {
         <h2><span className="bar" />¿Cómo participar?</h2>
         <ul className="rules">
           <li>Llena el formulario con tus datos personales y el comercial que te atiende.</li>
-          <li>Cada número de documento se inscribe <strong>una sola vez</strong> y la inscripción es válida <strong>solo para el sorteo de la semana en curso</strong>.</li>
+          <li>
+            Cada número de documento se inscribe <strong>una sola vez</strong> y la inscripción es válida <strong>solo para el sorteo de la semana en curso</strong>.
+            Quien ya participó en un sorteo no puede volver a participar, salvo que traiga un referido con el abono validado.
+          </li>
           <li>
             Para participar en la semana siguiente debes <strong>traer un referido</strong>: tu referido se inscribe
             escribiendo <strong>tu número de documento</strong> y debe abonar <strong>mínimo $200.000</strong> a su paquete.
@@ -66,7 +69,12 @@ export default function Home() {
           </li>
           <li>Solo hay 2 ganadores por semana: uno obtiene 50% y otro 30% de descuento en el paquete que escoja.</li>
           <li>
-            Mira el sorteo <strong>en vivo</strong> cada viernes a las 4:00 pm en{" "}
+            <strong>Para que el premio sea válido debes estar conectado a la reunión de Teams del sorteo</strong>{" "}
+            el viernes a las 4:00 pm. Si el ganador no está conectado, la ruleta vuelve a girar.{" "}
+            <a href={TEAMS_LINK} target="_blank" rel="noopener noreferrer"><strong>Unirme a la reunión de Teams</strong></a>.
+          </li>
+          <li>
+            También puedes seguir la ruleta <strong>en vivo</strong> en{" "}
             <a href="/en-vivo"><strong>sorteo.centicsas.com.co/en-vivo</strong></a>.
           </li>
         </ul>
