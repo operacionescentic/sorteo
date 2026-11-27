@@ -38,7 +38,7 @@ export default function GanadoresPage() {
 
       {ganadores && (
         <div className="grid grid-2">
-          {FECHAS_SORTEO.map((f) => {
+          {FECHAS_SORTEO.filter((f) => f !== "2026-11-20").map((f) => { // el sorteo del 20-nov no se realizó
             const deSemana = ganadores.filter((g) => g.sorteo_fecha === f);
             return (
               <div className="card" key={f}>
